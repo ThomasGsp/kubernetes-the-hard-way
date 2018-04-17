@@ -8,8 +8,8 @@ In this lab you will provision the compute resources required for running a secu
 
 The Kubernetes [networking model](https://kubernetes.io/docs/concepts/cluster-administration/networking/#kubernetes-model) assumes a flat network in which containers and nodes can communicate with each other. In cases where this is not desired [network policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/) can limit how groups of containers are allowed to communicate with each other and external network endpoints.
 
-Example with 3 physical servers:
-![physical view](/img/physical_view.png  =600x400)
+Example with 3 physical servers:  
+![physical view](https://github.com/ThomasGsp/kubernetes-the-hard-way_Independent-Solutions/blob/master/img/physical_view.png)
 
 > Setting up network policies is out of scope for this tutorial.
 
