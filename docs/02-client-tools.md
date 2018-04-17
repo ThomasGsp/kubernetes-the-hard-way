@@ -2,7 +2,7 @@
 
 In this lab you will install the command line utilities required to complete this tutorial: [cfssl](https://github.com/cloudflare/cfssl), [cfssljson](https://github.com/cloudflare/cfssl), and [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl).
 
-NB: I'm a Linux user (Debian), the others OS are not personally tested.
+NB: I'm a Linux user (Debian), the others OS are not personally tested.  
 NB2: If you are an Windows user, i think that you are lost.
 
 ## Install CFSSL
