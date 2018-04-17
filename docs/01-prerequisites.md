@@ -31,4 +31,9 @@ Minimum setup:
 - 1CPU / 1G RAM per etcd (Low charge)
 - 1CPU / 1G RAM per LB (VM - Keepalived)
 
+1 physical with more than 8 cpu / 24G ram, or 3 smaller.  
+You can setup work in over-allocation on your CPU, it should be not a problem.  
+The RAM memory is the most important, in fact the worker and master don't use SWAP. If you don't have enough ram memory, your process will be 
+killed by [OOM Killer](https://www.kernel.org/doc/gorman/html/understand/understand016.html) ! 
+
 Next: [Installing the Client Tools](02-client-tools.md)
