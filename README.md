@@ -37,8 +37,8 @@ with your own virtualization system (VMware, HyperV, Proxmox, Xen...).
 With this case, we will not aboard the specifics settings for each systems...
 
 * [Prerequisites](docs/01-prerequisites.md)  -- Adapted
-* [Installing the Client Tools](docs/02-client-tools.md) -- Not adapted
-* [Provisioning Compute Resources](docs/03-compute-resources.md) -- Not adapted
+* [Installing the Client Tools](docs/02-client-tools.md) -- Adapted
+* [Provisioning Compute Resources](docs/03-compute-resources.md) -- Work in progress
 * [Provisioning the CA and Generating TLS Certificates](docs/04-certificate-authority.md) -- Not adapted
 * [Generating Kubernetes Configuration Files for Authentication](docs/05-kubernetes-configuration-files.md) -- Not adapted
 * [Generating the Data Encryption Config and Key](docs/06-data-encryption-keys.md) -- Not adapted
