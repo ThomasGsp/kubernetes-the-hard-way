@@ -1,47 +1,34 @@
 # Prerequisites
 
-## Google Cloud Platform
+## Your platform - Lab
+This tutorial leverages you own physical infrastructure to streamline provisioning of the compute infrastructure required to bootstrap
+a Kubernetes cluster from the ground up.
+A typical Lab infrastructure can be just an standalone server (using virtualization system), different physical servers or
+somethings hybrid.
+In case of different physical server are using, ensure that your network is enough dimensioned to support this lab (1G link minimum).
 
-This tutorial leverages the [Google Cloud Platform](https://cloud.google.com/) to streamline provisioning of the compute infrastructure required to bootstrap a Kubernetes cluster from the ground up. [Sign up](https://cloud.google.com/free/) for $300 in free credits.
+In total, we will provide:
+- 3 workers servers
+- 3 masters servers
+- 3 etcd servers
+- 2 Load Balancer (M/S)
 
-[Estimated cost](https://cloud.google.com/products/calculator/#id=78df6ced-9c50-48f8-a670-bc5003f2ddaa) to run this tutorial: $0.22 per hour ($5.39 per day).
+LB can to be a physical network appliance or two virtual machines.
+Some tutorial uses the same server for masters and etcd, but to be more close from the reality, 3 independent server will be provisioned.
 
-> The compute resources required for this tutorial exceed the Google Cloud Platform free tier.
+[--> etcd hardware](https://coreos.com/etcd/docs/latest/op-guide/hardware.html)
+> * A slow disk will increase etcd request latency and potentially hurt cluster stability
+> * etcd has a relatively small memory footprint but its performance still depends on having enough memory. An etcd server will aggressively cache key-value data and spends most of the rest of its memory tracking watchers. Typically 8GB is enough.
+> * Few etcd deployments require a lot of CPU capacity. Typical clusters need two to four cores to run smoothly. 
 
-## Google Cloud Platform SDK
 
-### Install the Google Cloud SDK
+### Resources
 
-Follow the Google Cloud SDK [documentation](https://cloud.google.com/sdk/) to install and configure the `gcloud` command line utility.
+Minimum setup:
 
-Verify the Google Cloud SDK version is 183.0.0 or higher:
-
-```
-gcloud version
-```
-
-### Set a Default Compute Region and Zone
-
-This tutorial assumes a default compute region and zone have been configured.
-
-If you are using the `gcloud` command-line tool for the first time `init` is the easiest way to do this:
-
-```
-gcloud init
-```
-
-Otherwise set a default compute region:
-
-```
-gcloud config set compute/region us-west1
-```
-
-Set a default compute zone:
-
-```
-gcloud config set compute/zone us-west1-c
-```
-
-> Use the `gcloud compute zones list` command to view additional regions and zones.
+- 2CPU / 4G RAM per worker
+- 1CPU / 2G RAM per master
+- 1CPU / 1G RAM per etcd (Low charge)
+- 1CPU / 1G RAM per LB (VM - Keepalived)
 
 Next: [Installing the Client Tools](02-client-tools.md)
