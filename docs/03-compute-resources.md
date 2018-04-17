@@ -61,23 +61,21 @@ Each compute instance will be provisioned with a fixed private IP address to sim
 Create three compute instances which will host the Kubernetes control plane:
 
 Minimum:
-- 1 CPU
-- 2G RAM
-- 10G Disk
-
-- Debian 9 fresh install (or ubuntu)
-- No swap
+> - 1 CPU
+> - 2G RAM
+> - 10G Disk
+> - Debian 9 fresh install (or ubuntu)
+> - No swap
 
 ### Instances - Etcd
 
 Create three compute instances which will host etcd database:
 
 Minimum:
-- 1 CPU
-- 1G RAM
-- 10G Disk
-
-- Debian 9 fresh install (or ubuntu)
+> - 1 CPU
+> - 1G RAM
+> - 10G Disk
+> - Debian 9 fresh install (or ubuntu)
 
 
 ### Instances - Workers
@@ -85,13 +83,31 @@ Minimum:
 Create three compute instances which will host the Kubernetes worker nodes:
 
 Minimum:
-- 2 CPU
-- 4G RAM
-- 50G Disk
+> - 2 CPU
+> - 4G RAM
+> - 50G Disk
+> - Debian 9 fresh install (or ubuntu)
+> - No swap 
 
-- Debian 9 fresh install (or ubuntu)
-- No swap 
+### DNS / Hosts
+In the future steps, in place of the IPs address we'll use the hostname.  
+You should create and deploy an standard /etc/hosts file or setup an DNS.
 
+### Others
+We'll have to deploy lot of configurations files on the different servers.  
+Setup your public key is really useful !
+
+Generate your SSH keys(if not exist):
+> ssh-keygen -t rsa -b 4096 -C "<email>"
+
+Make sure to replace <email> with your email, a placeholder, or an empty string.
+Keep hitting enter until files exist in ~/.ssh.
+
+Output the contents of the public key file, like so:
+> cat ~/.ssh/id_rsa.pub
+
+Finally, copy the output for each servers into /root/.ssh/authorized_keys file.
+This will permit to SSH all virtual machine in root user.
 
 
 Next: [Provisioning a CA and Generating TLS Certificates](04-certificate-authority.md)
