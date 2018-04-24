@@ -93,7 +93,7 @@ Minimum:
 In the future steps, in place of the IPs address we'll use the hostname.  
 You should create and deploy an standard /etc/hosts file or setup an DNS.
 
-### Others
+### Others  
 We'll have to deploy lot of configurations files on the different servers.  
 Setup your public key is really useful !
 
